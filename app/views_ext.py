@@ -20,16 +20,16 @@ def allowed_file(filename):
 
 def evaluate_img(path):
     img = cv2.imread(path)
-    cv2.imshow('threh',img)
-    cv2.waitKey(0)
+    #cv2.imshow('threh',img)
+    #cv2.waitKey(0)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    cv2.imshow('threh',gray)
-    cv2.waitKey(0)
+    #cv2.imshow('threh',gray)
+    #cv2.waitKey(0)
     # Convert a color image to a grayscale image 
     ret, thresh = cv2.threshold(gray, 0, 255,cv2.THRESH_OTSU|cv2.THRESH_BINARY_INV)
     # Convert the grayscale image to blak and white image
-    cv2.imshow('threh',thresh)
-    cv2.waitKey(0)
+    #cv2.imshow('threh',thresh)
+    #cv2.waitKey(0)
     rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2,2))
     # Define size of kernel
     dilation = cv2.dilate(thresh, rect_kernel, iterations =5)
